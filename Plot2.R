@@ -46,13 +46,7 @@ power$Sub_metering_3 <- as.numeric(as.character(power$Sub_metering_3))
 
 str(power)
 
-#### plot2: make a histogram of Global Active Power ###.
-
-hist(power$Global_active_power, main = "Global Active Power", xlab="Global Active Power(kilowatts)", ylab="Frequency", col="red")
-dev.copy(png, file="../plot1.png", width=480, height=480)
-dev.off()
-
-#### plot2: 
+#### plot2: plot of Global Active Power by weekdays ###.
 
 power$day <- weekdays(as.Date(power$Date))
 power$datetime <- strptime(paste(power$Date, power$Time, sep= " "), "%Y-%m-%d %H:%M:%S")
